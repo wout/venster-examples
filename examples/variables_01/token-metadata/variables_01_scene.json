@@ -1,0 +1,36 @@
+{
+  "721": {
+    "3333acb55ed79731ea6658abb74f453cbb87e15aee01a7aab484b2a6": {
+      "variables_01_scene": {
+        "name": "Variables 01 Scene Example",
+        "description": [
+          "This asset illustrates a scene token invoking the renderer token",
+          " with a set of arguments. In this example, all the variables are",
+          " dynamic data pulled from the blockchain (starting with an @). T",
+          "he variables with the current_* prefix are values fetched every ",
+          "time the token is rendered. The ones without the prefix are vari",
+          "ables from when the token was minted."
+        ],
+        "image": "ipfs://Qma1mdrD69PTdpAUk9qDy19VdnmULyi6Xiw48ahViCPG1Z",
+        "mediaType": "image/png",
+
+        "renderer": {
+          "main": "variables_01_renderer",
+          "arguments": [
+            "@tx_hash",
+            "@epoch",
+            "@slot",
+            "@block",
+            "@block_size",
+            "@block_hash",
+            "@current_epoch",
+            "@current_slot",
+            "@current_block",
+            "@current_block_size",
+            "@current_block_hash"
+          ]
+        }
+      }
+    }
+  }
+}
