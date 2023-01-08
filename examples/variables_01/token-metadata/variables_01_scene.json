@@ -13,7 +13,6 @@
         ],
         "image": "ipfs://Qma1mdrD69PTdpAUk9qDy19VdnmULyi6Xiw48ahViCPG1Z",
         "mediaType": "image/png",
-
         "renderer": {
           "main": "variables_01_renderer",
           "arguments": [
