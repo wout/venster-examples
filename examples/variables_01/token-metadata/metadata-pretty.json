@@ -1,0 +1,135 @@
+{
+  "721": {
+    "3333acb55ed79731ea6658abb74f453cbb87e15aee01a7aab484b2a6": {
+      "variables_01_dependency": {
+        "name": "Variables 01 Dependency Example",
+        "description": [
+          "This asset illustrates how one or more dependencies can be store",
+          "d in one token following the Venster Metadata Standard. The vari",
+          "ables_01_renderer token references this dependency, and the vens",
+          "ter.io viewer will glue all the parts together to render the NFT",
+          "s in this policy."
+        ],
+        "image": "ipfs://QmaNB9HqXSWHLhBcRzsc1Wku35XN5iQL6VnsCWzJ1bSr26",
+        "mediaType": "image/png",
+        "files": [
+          {
+            "name": "variables_01_dependency.js",
+            "mediaType": "application/javascript",
+            "src": [
+              "const ELS=['a','animate','animateMotion','animateTransform','cir",
+              "cle','clipPath','defs','ellipse','filter','g','line','linearGrad",
+              "ient','marker','mask','path','pattern','polygon','polyline','rec",
+              "t','svg','symbol','text','textPath','tspan','use'].reduce((s,e)=",
+              ">{s[e]=(p,a,b=false)=>Svg.el(e,p,a,b);return s},{});const Svg=Ob",
+              "ject.assign({ns:'http://www.w3.org/2000/svg',doc:(width,height,e",
+              "l,attr,clear=true)=>{if(clear){el.innerHTML=''}(el=Svg.el('svg',",
+              "el)).setAttribute('xmlns',Svg.ns);return Svg.at(Svg.at(el,{heigh",
+              "t:height,version:'1.1',width:width}),attr)},el:(name,el,attr,bef",
+              "ore=false)=>{const e=document.createElementNS(Svg.ns,name);befor",
+              "e?el.prepend(e):el.append(e);return Svg.at(e,attr)},at:(el,attr)",
+              "=>{((attr=attr||[])instanceof Array?attr:Object.entries(attr)).m",
+              "ap(a=>el.setAttribute(dasherizeAttrName(a[0]),a[1]));return el}}",
+              ",ELS);function dasherizeAttrName(string){if(/viewBox/.test(strin",
+              "g)){return string}return string.replace(/[A-Z]/g,m=>'-'+m.toLowe",
+              "rCase())};const Color={rgbToHex:rgb=>'#'+rgb.map(c=>(~~c).toStri",
+              "ng(16).padStart(2,'0')).join(''),hslToRgb:hsl=>{const[h,s,l]=hsl",
+              ".map((v,i)=>v/(i==0?1:100));const a=s*Math.min(l,1-l);const f=(n",
+              ",k=(n+h/30)%12)=>l-a*Math.max(Math.min(k-3,9-k,1),-1);return[0,8",
+              ",4].map(v=>255*f(v))},hslToHex:hsl=>Color.rgbToHex(Color.hslToRg",
+              "b(hsl))}"
+            ],
+            "license": "CC BY 4.0"
+          },
+          {
+            "name": "variables_01_dependency.css",
+            "mediaType": "text/css",
+            "src": [
+              "body{display:flex;justify-content:center;align-items:center}svg{",
+              "box-shadow:0 0 20px rgba(0,0,0,0.1)}"
+            ]
+          }
+        ]
+      },
+      "variables_01_renderer": {
+        "name": "Variables 01 Renderer Example",
+        "description": [
+          "This asset illustrates how the renderer token defines the main f",
+          "unction the viewer will call with the necessary arguments.",
+          "It also defines an output type and two dependencies. The first d",
+          "ependency is a token within the same policy id. The second one i",
+          "s an on-chain font provided by venster.io."
+        ],
+        "image": "ipfs://QmXH5Y4x1QDSHzU574XTYCjpUm1W4SzzXyTfvTXdWB3MkZ",
+        "mediaType": "image/png",
+        "files": [
+          {
+            "name": "variables_01_renderer.js",
+            "mediaType": "application/javascript",
+            "src": [
+              "function main(th,e,s,b,bs,bh,ce,cs,cb,cbs,cbh){const names=['tx_",
+              "hash','epoch','slot','block','block_size','block_hash','current_",
+              "epoch','current_slot','current_block','current_block_size','curr",
+              "ent_block_hash'];const[size,space,font]=[640,48,'cutivemonoregul",
+              "ar'];const[R1,R2]=[tx_rand(th),tx_rand(cbh)];const thColor=Color",
+              ".hslToHex([360*R1(),40,50]);const cbhColor=Color.hslToHex([360*R",
+              "2(),40,50]);const epochProgress=(cs/432000)*size;const doc=Svg.d",
+              "oc(size,size,document.querySelector('body'),{viewBox:`0 0 ${ siz",
+              "e } ${ size }`});Svg.line(doc,{x1:epochProgress,y1:0,x2:epochPro",
+              "gress,y2:size,fill:'none',stroke:'#ccc',strokeWidth:1,strokeDash",
+              "array:'2 2'});Array.from(arguments).forEach((a,i)=>{Svg.text(doc",
+              ",{x:space,y:space+i*space,fontFamily:font,fontWeight:'bold',font",
+              "Size:14,fill:'#999'}).textContent=names[i];Svg.text(doc,{x:space",
+              ",y:space*1.4+i*space,fontFamily:font,fontWeight:'bold',fontSize:",
+              "14,fill:(/^current_/.test(names[i])?cbhColor:thColor)}).textCont",
+              "ent=a});Svg.text(doc,{x:size/2,y:size-space,fontFamily:font,font",
+              "Size:24,fill:'#666',textAnchor:'middle'}).textContent='venster.i",
+              "o'}"
+            ],
+            "license": "CC BY 4.0"
+          }
+        ],
+        "outputType": "text/html",
+        "dependencies": [
+          {
+            "type": "onchain",
+            "asset_name": "variables_01_dependency"
+          },
+          {
+            "type": "internal",
+            "fingerprint": "asset1cqshmlqnh8ghzv20qm453qyf46vn6ur5ef03zs"
+          }
+        ]
+      },
+      "variables_01_scene": {
+        "name": "Variables 01 Scene Example",
+        "description": [
+          "This asset illustrates a scene token invoking the renderer token",
+          " with a set of arguments. In this example, all the variables are",
+          " dynamic data pulled from the blockchain (starting with an @). T",
+          "he variables with the current_* prefix are values fetched every ",
+          "time the token is rendered. The ones without the prefix are vari",
+          "ables from when the token was minted."
+        ],
+        "image": "ipfs://Qma1mdrD69PTdpAUk9qDy19VdnmULyi6Xiw48ahViCPG1Z",
+        "mediaType": "image/png",
+        "renderer": {
+          "main": "variables_01_renderer",
+          "arguments": [
+            "@tx_hash",
+            "@epoch",
+            "@slot",
+            "@block",
+            "@block_size",
+            "@block_hash",
+            "@current_epoch",
+            "@current_slot",
+            "@current_block",
+            "@current_block_size",
+            "@current_block_hash"
+          ]
+        }
+      }
+    }
+  }
+}
