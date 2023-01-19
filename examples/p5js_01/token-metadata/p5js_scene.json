@@ -1,0 +1,25 @@
+{
+  "721": {
+    "3333acb55ed79731ea6658abb74f453cbb87e15aee01a7aab484b2a6": {
+      "p5js_01_scene": {
+        "name": "p5.js 01 Scene Example",
+        "description": [
+          "This asset illustrates a scene token invoking the renderer token",
+          " with two arguments: a literal numeric value and the transaction",
+          " hash of the mint. The numeric value defines the number of grey ",
+          "boids that should be created initially. The renderer uses the tr",
+          "ansaction hash as a seed for the PRNG."
+        ],
+        "image": "ipfs://QmemRCVLrjGYuQvh8GyBVr1RuPwY9BrPQy4XuxoKtQqAaD",
+        "mediaType": "image/png",
+        "renderer": {
+          "main": "p5js_01_renderer",
+          "arguments": [
+            5,
+            "@tx_hash"
+          ]
+        }
+      }
+    }
+  }
+}
