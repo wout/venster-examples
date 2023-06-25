@@ -1,0 +1,35 @@
+{
+  "721": {
+    "[INSERT POLICY_ID]": {
+      "renderer": {
+        "name": "[INSERT PROJECT NAME] renderer",
+        "files": [
+          {
+            "name": "renderer.js",
+            "mediaType": "application/javascript",
+            "src": [
+              "[INSERT CODE]"
+            ],
+            "license": "[INSERT LICENSE]"
+          },
+          {
+            "name": "renderer.css",
+            "mediaType": "text/css",
+            "src": [
+              "[INSERT CODE]"
+            ]
+          },
+          {
+            "name": "renderer.html",
+            "mediaType": "text/html",
+            "src": [
+              "[INSERT CODE]"
+            ]
+          }
+        ],
+        "outputType": "text/html",
+        "dependencies": []
+      }
+    }
+  }
+}

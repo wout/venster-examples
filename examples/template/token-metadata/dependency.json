@@ -1,0 +1,19 @@
+{
+  "721": {
+    "[INSERT POLICY_ID]": {
+      "dependency": {
+        "name": "[INSERT PROJECT NAME] dependency",
+        "files": [
+          {
+            "name": "dependency.js",
+            "mediaType": "application/javascript",
+            "src": [
+              "[INSERT CODE]"
+            ],
+            "license": "[INSERT LICENSE]"
+          }
+        ]
+      }
+    }
+  }
+}

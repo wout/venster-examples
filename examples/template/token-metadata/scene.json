@@ -1,0 +1,17 @@
+{
+  "721": {
+    "[INSERT POLICY_ID]": {
+      "[INSERT ASSET_NAME]": {
+        "name": "[INSERT NAME]",
+        "description": "[INSERT DESCRIPTION]",
+        "image": "[INSERT COVER IMAGE]",
+        "mediaType": "image/png",
+        "renderer": {
+          "main": "renderer",
+          "arguments": []
+        },
+        "properties": {}
+      }
+    }
+  }
+}
